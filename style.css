@@ -1,82 +1,360 @@
-:root{
-  --papel:#f2f2ee;--suit:#f5c400;--luva:#d4141c;--gutter:10px;
-  --titulo:"Dela Gothic One","Arial Black",Impact,sans-serif;
-  --texto:"Shippori Mincho B1",Georgia,serif;
+:root {
+  --papel: #f2f2ee;
+  --suit: #f5c400;
+  --luva: #d4141c;
+  --gutter: 10px;
+  --titulo: "Dela Gothic One", "Arial Black", Impact, sans-serif;
+  --texto: "Shippori Mincho B1", Georgia, serif;
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
-body{margin:0;background:var(--papel);color:#000;font:1.05rem/1.75 var(--texto)}
-img{display:block;max-width:100%}
-a{color:var(--luva)}
-:focus-visible{outline:3px solid var(--luva);outline-offset:3px}
-h1,h2,h3{font-family:var(--titulo);font-weight:400;line-height:1.05;margin:0}
-h2{font-size:1.9rem;margin:3rem 0 1rem}
 
-.pular{position:absolute;left:-999px;background:var(--suit);color:#000;padding:.5rem 1rem}
-.pular:focus{left:.5rem;top:.5rem;z-index:20}
-
-/* cabeçalho */
-.topo{position:sticky;top:0;z-index:10;background:var(--papel);border-bottom:3px solid #000}
-.topo>div{max-width:1100px;margin:0 auto;padding:.6rem 1rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1.2rem}
-.marca{font:1.45rem/1 var(--titulo);color:#000;text-decoration:none;background:var(--suit);padding:.3rem .6rem;border:3px solid #000;transform:rotate(-2deg)}
-.topo ul{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0}
-.topo li a{color:#000;text-decoration:none;font-weight:700;border-bottom:3px solid transparent}
-.topo li a:hover{border-color:var(--luva)}
-
-main{max-width:1100px;margin:0 auto;padding:1rem}
-.painel{background:#fff;border:3px solid #000;overflow:hidden}
-
-/* abertura */
-.abertura{display:grid;gap:var(--gutter)}
-.impacto{position:relative;min-height:22rem;display:flex;align-items:center;padding:1.5rem 1.5rem 5rem;
-  background:repeating-conic-gradient(from 0deg at 85% 55%,#000 0 .8deg,#fff .8deg 4.5deg)}
-.impacto h1{background:#fff;border:3px solid #000;padding:1rem 1.3rem;font-size:clamp(2.3rem,8vw,4.4rem);max-width:30rem}
-.sfx{position:absolute;right:1rem;bottom:.2rem;font:clamp(3.5rem,12vw,7rem)/1 var(--titulo);
-  color:var(--luva);-webkit-text-stroke:4px #000;paint-order:stroke fill;transform:rotate(-8deg)}
-.sinopse{background:var(--suit);padding:1.4rem;display:flex;flex-direction:column;justify-content:center}
-.sinopse p{margin:0 0 1rem}
-.sinopse p:last-child{margin:0}
-
-/* heróis */
-.elenco{display:grid;gap:var(--gutter)}
-.elenco figure{margin:0;background:var(--suit);border-bottom:3px solid #000}
-.elenco img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.elenco figcaption{background:#000;color:#fff;font-size:.85rem;padding:.3rem .8rem}
-.corpo{padding:1.2rem 1.3rem 1.4rem}
-.corpo h3{font-size:1.6rem}
-.apelido{margin:.2rem 0 .8rem;font-style:italic;color:#333}
-.corpo p:last-child{margin-bottom:0}
-
-/* classes */
-.rolagem{overflow-x:auto;border:3px solid #000;background:#fff}
-table{width:100%;border-collapse:collapse;min-width:30rem}
-caption{text-align:left;padding:.7rem 1rem;font-style:italic}
-th,td{padding:.7rem 1rem;text-align:left;border-top:2px solid #000}
-thead th{background:#000;color:#fff}
-tbody th{font:1.6rem/1 var(--titulo);width:5.5rem}
-tbody tr:first-child th{background:var(--suit)}
-
-/* curiosidades */
-.fatos{background:var(--suit);border:3px solid #000;padding:0 1.4rem 1.4rem;margin-top:3rem}
-.fatos h2{margin-top:1.4rem}
-.fatos dl{margin:0}
-.fatos dl>div{break-inside:avoid;margin-bottom:1.2rem}
-dt{font:1.25rem/1.2 var(--titulo)}
-dd{margin:.3rem 0 0;max-width:60ch}
-
-.rodape{margin-top:3rem;background:#000;color:#fff;padding:1.5rem 1rem;border-top:6px solid var(--suit)}
-.rodape>div{max-width:1100px;margin:0 auto;font-size:.9rem}
-.rodape p{margin:.5rem 0 0}
-.rodape a{color:var(--suit)}
-
-@media (min-width:760px){
-  .abertura{grid-template-columns:1.7fr 1fr}
-  .elenco{grid-template-columns:1fr 1fr}
-  .destaque{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.3fr}
-  .destaque figure{border-bottom:0;border-right:3px solid #000}
-  .destaque img{aspect-ratio:auto;height:100%;min-height:22rem}
-  .destaque .corpo{align-self:center;padding:2rem}
-  .destaque h3{font-size:2.4rem}
-  .fatos dl{columns:2;column-gap:2.5rem}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: #000;
+  font: 1.05rem/1.75 var(--texto);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--luva);
+}
+
+:focus-visible {
+  outline: 3px solid var(--luva);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--titulo);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.9rem;
+  margin: 3rem 0 1rem;
+}
+
+.pular {
+  position: absolute;
+  left: -999px;
+  background: var(--suit);
+  color: #000;
+  padding: .5rem 1rem;
+}
+
+.pular:focus {
+  left: .5rem;
+  top: .5rem;
+  z-index: 20;
+}
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--papel);
+  border-bottom: 3px solid #000;
+}
+
+.topo > div {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: .6rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1.2rem;
+}
+
+.marca {
+  font: 1.45rem/1 var(--titulo);
+  color: #000;
+  text-decoration: none;
+  background: var(--suit);
+  padding: .3rem .6rem;
+  border: 3px solid #000;
+  transform: rotate(-2deg);
+}
+
+.topo ul {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topo li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 3px solid transparent;
+}
+
+.topo li a:hover {
+  border-color: var(--luva);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.painel {
+  background: #fff;
+  border: 3px solid #000;
+  overflow: hidden;
+}
+
+.abertura {
+  display: grid;
+  gap: var(--gutter);
+}
+
+.impacto {
+  position: relative;
+  min-height: 22rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.5rem 5rem;
+  background: repeating-conic-gradient(
+    from 0deg at 85% 55%,
+    #000 0 .8deg,
+    #fff .8deg 4.5deg
+  );
+}
+
+.impacto h1 {
+  background: #fff;
+  border: 3px solid #000;
+  padding: 1rem 1.3rem;
+  font-size: clamp(2.3rem, 8vw, 4.4rem);
+  max-width: 30rem;
+}
+
+.sfx {
+  position: absolute;
+  right: 1rem;
+  bottom: .2rem;
+  font: clamp(3.5rem, 12vw, 7rem)/1 var(--titulo);
+  color: var(--luva);
+  -webkit-text-stroke: 4px #000;
+  paint-order: stroke fill;
+  transform: rotate(-8deg);
+}
+
+.sinopse {
+  background: var(--suit);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sinopse p {
+  margin: 0 0 1rem;
+}
+
+.sinopse p:last-child {
+  margin: 0;
+}
+
+.elenco {
+  display: grid;
+  gap: var(--gutter);
+}
+
+.elenco figure {
+  margin: 0;
+  background: var(--suit);
+  border-bottom: 3px solid #000;
+}
+
+.elenco img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.elenco figcaption {
+  background: #000;
+  color: #fff;
+  font-size: .85rem;
+  padding: .3rem .8rem;
+}
+
+.corpo {
+  padding: 1.2rem 1.3rem 1.4rem;
+}
+
+.corpo h3 {
+  font-size: 1.6rem;
+}
+
+.apelido {
+  margin: .2rem 0 .8rem;
+  font-style: italic;
+  color: #333;
+}
+
+.corpo p:last-child {
+  margin-bottom: 0;
+}
+
+.rolagem {
+  overflow-x: auto;
+  border: 3px solid #000;
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 30rem;
+}
+
+caption {
+  text-align: left;
+  padding: .7rem 1rem;
+  font-style: italic;
+}
+
+th,
+td {
+  padding: .7rem 1rem;
+  text-align: left;
+  border-top: 2px solid #000;
+}
+
+thead th {
+  background: #000;
+  color: #fff;
+}
+
+tbody th {
+  font: 1.6rem/1 var(--titulo);
+  width: 5.5rem;
+}
+
+tbody tr:first-child th {
+  background: var(--suit);
+}
+
+.fatos {
+  background: var(--suit);
+  border: 3px solid #000;
+  padding: 0 1.4rem 1.4rem;
+  margin-top: 3rem;
+}
+
+.fatos h2 {
+  margin-top: 1.4rem;
+}
+
+.fatos dl {
+  margin: 0;
+}
+
+.fatos dl > div {
+  break-inside: avoid;
+  margin-bottom: 1.2rem;
+}
+
+dt {
+  font: 1.25rem/1.2 var(--titulo);
+}
+
+dd {
+  margin: .3rem 0 0;
+  max-width: 60ch;
+}
+
+.rodape {
+  margin-top: 3rem;
+  background: #000;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  border-top: 6px solid var(--suit);
+}
+
+.rodape > div {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: .9rem;
+}
+
+.rodape p {
+  margin: .5rem 0 0;
+}
+
+.rodape a {
+  color: var(--suit);
+}
+
+@media (min-width: 760px) {
+  .abertura {
+    grid-template-columns: 1.7fr 1fr;
+  }
+
+  .elenco {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .destaque {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+  }
+
+  .destaque figure {
+    border-bottom: 0;
+    border-right: 3px solid #000;
+  }
+
+  .destaque img {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 22rem;
+  }
+
+  .destaque .corpo {
+    align-self: center;
+    padding: 2rem;
+  }
+
+  .destaque h3 {
+    font-size: 2.4rem;
+  }
+
+  .fatos dl {
+    columns: 2;
+    column-gap: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
